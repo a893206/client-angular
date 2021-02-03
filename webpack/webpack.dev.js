@@ -17,20 +17,20 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
     devtool: 'eval-source-map',
     devServer: {
         contentBase: './build/resources/main/static/',
-        proxy: [{
-            context: [
-                '/api',
-                '/services',
-                '/management',
-                '/swagger-resources',
-                '/v2/api-docs',
-                '/h2-console',
-                '/auth'
-            ],
-            target: `http${options.tls ? 's' : ''}://localhost:8080`,
-            secure: false,
-            changeOrigin: options.tls
-        }],
+        // proxy: [{
+        //     context: [
+        //         '/api',
+        //         '/services',
+        //         '/management',
+        //         '/swagger-resources',
+        //         '/v2/api-docs',
+        //         '/h2-console',
+        //         '/auth'
+        //     ],
+        //     target: `http${options.tls ? 's' : ''}://localhost:8080`,
+        //     secure: false,
+        //     changeOrigin: options.tls
+        // }],
         stats: options.stats,
         watchOptions: {
             ignored: /node_modules/
